@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>example4</title>
+  <style>
+    html {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      /*cursor: none;*/
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="http://i.giphy.com/v9lzdXFnGUgFi.gif" alt="">
+
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script>
+
+    var mouse_tracker = function(event){
+      console.log(event.pageX, event.pageY, !!event.which);
+      console.log(event);
+    }
+
+    //makes the GIF follow the mouse around when clicked anywhere on the webpage.
+    $('body').on('click', function() {
+      $('body').on('mousemove', function(event) {
+        $('img').css({'position':'fixed','top':event.pageY,'left':event.pageX});
+      })
+    })
+  
+    
+    
+
+  </script>
+</body>
+</html>

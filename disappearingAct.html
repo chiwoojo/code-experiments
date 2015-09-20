@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disappearing IMG</title>
+  <style>
+
+    div {
+      height: 100px;
+      width: 100px;
+      border: 1px solid red;
+    }
+
+    .highlighted {
+      background-color: red;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="target">Target</div>
+
+  <div id="magic">Disappearing Act</div>
+
+  <img src="http://www.scottcochrane.com/wp-content/uploads/2015/01/Three-Buckets.jpg" alt="">
+
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+  <script>
+
+    /*
+      I practiced more jQuery actions with this script, working with event listeners.
+    */
+
+    //if my mouse is over this target element, add the class highligthed which is styled in the CSS
+    $('#target').on('mouseover', function() {
+      $('#target').addClass('highlighted');
+    })
+
+    //if I leave my mouse over that area, remove the class.
+    $('#target').on('mouseleave', function() {
+      $('#target').removeClass('highlighted');
+    })
+
+    //hide img if I hover over the element with my mouse
+    $('#magic').on('mouseover', function() {
+      $('img').hide();
+    })
+
+    //show img if I leave the element with my mouse
+    $('#magic').on('mouseleave', function() {
+      $('img').show();
+    })
+
+  </script>
+
+</body>
+
+</html>

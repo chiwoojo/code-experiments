@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>example</title>
+</head>
+<body>
+
+  <!--
+  <div id="target">click</div> 
+  -->
+
+  <div id="beep">Click here to change colors of the background!</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+
+    /*
+      This example is to demonstrate event listeners. This script changes the background color of the HTML body element whenever the specified div element is clicked. 
+    */
+
+    var fn = function() {
+      console.log('heeey');
+    }
+
+    var beeper = function() {
+      $('body').append("<div>Whoa!</div>");
+      var randomColor = '#' + Math.random().toString(16).slice(2, 8);
+      $('body').css("background-color",randomColor);
+    }
+
+    /*
+      When I click on the div element, it logs to the console 'heeey' :)
+    */
+    //document.querySelector('#target').addEventListener('click', fn);
+
+    document.querySelector('#beep').addEventListener('click', beeper);
+
+
+
+
+  </script>
+</body>
+</html>
